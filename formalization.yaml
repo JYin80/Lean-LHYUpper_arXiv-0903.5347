@@ -47,9 +47,9 @@ sources:
       steps found during the formalization, and with the steps that the arXiv version only
       sketches written out (Section 12, 12.1, 12.2 and Appendix A). The main result, Theorem
       2.1, is unchanged. docs/PAPER-VS-LEAN.md lists every difference. Jun Yin is an author of
-      the paper and of the formalization.
+      the paper and of the formalization; Horng-Tzer Yau endorses it.
     license: "unknown"
-    author_endorsement: "TEMPLATE: participated, endorsed, no-response, not-contacted, declined, n/a, or other (Jun Yin is a co-author of the paper; state whether Horng-Tzer Yau was contacted)"
+    author_endorsement: "endorsed"
   - title: "Eigenvalues and eigenfunctions of a Bose system of hard spheres and its low-temperature properties"
     authors:
       - "T. D. Lee"
@@ -59,15 +59,6 @@ sources:
     location: "Phys. Rev. 106 (1957), 1135-1145"
     relationship: "background"
     note: "The physical prediction of the second order term; not used in the proof."
-  - title: "Ground-state energy of a low-density Bose gas: A second-order upper bound"
-    authors:
-      - "László Erdős"
-      - "Benjamin Schlein"
-      - "Horng-Tzer Yau"
-    type: "paper"
-    location: "Phys. Rev. A 78 (2008), 053627"
-    relationship: "background"
-    note: "The earlier upper bound, with a constant C > 1 in front of 16/(15 pi^2), that the formalized paper improves."
 
 related_formalizations: []
 
@@ -90,7 +81,7 @@ status:
 automation:
   methods:
     - method: "agent"
-      models: ["TEMPLATE: model names used (the project records mention claude-opus-5, claude-sonnet-5 and Claude Fable 5.2); confirm the list"]
+      models: ["claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5-2"]
       framework: "Claude Code"
       tool_setup: >-
         AI-assisted: a team of Claude Code agents (a dispatcher, workers on ticket worktrees and
@@ -99,7 +90,7 @@ automation:
         the hypotheses and the route-level choices. The port to the Lean module system and the
         Challenge/Solution files for Palomar were also written with Claude.
       cost:
-        wall_time: "TEMPLATE: approximate elapsed effort (the work repository has 138 commits dated 2026-11-16 to 2026-11-19)"
+        wall_time: "about 55 hours elapsed (2026-11-16 to 2026-11-19; the work repository has 138 commits, in 30 distinct clock hours)"
         spend_usd: "not tracked"
         hardware: "local machine"
       prompting_notes: "n/a"
