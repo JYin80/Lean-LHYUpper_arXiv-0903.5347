@@ -20,9 +20,8 @@ This file is the statement of the main result of
 > H.-T. Yau and J. Yin, *The Second Order Upper Bound for the Ground Energy of a Bose Gas*,
 > J. Stat. Phys. 136 (2009), 453–503, arXiv:0903.5347,
 
-together with five short statements showing that its hypotheses can be satisfied and that its
-conclusion is not vacuous. It imports Mathlib and nothing else. The proofs are in the library
-`LHYUpper`; `Solution.lean` connects each statement below to the theorem of the library that
+with the definitions it uses. It imports Mathlib and nothing else. The proof is in the library
+`LHYUpper`; `Solution.lean` connects the statement below to the theorem of the library that
 proves it.
 
 ## The model
@@ -63,16 +62,16 @@ With `g₀ = 4πa` this is the upper bound in the Lee–Huang–Yang formula
   fact that is not formalized; the equality of the two is not formalized either.
 * "Smooth with fast decay" is read as `V` being a Schwartz function, "symmetric" as `V` even, and
   "small enough that the Born series converges" as `sup_x ∫ V(y) / (4π|x - y|) dy < 1`. The
-  hypothesis that `V` is not identically zero is added; it makes `g₀ > 0` (`g0_pos`), and the
-  ratio divides by `g₀^{5/2}`.
-* The scattering solution enters as the hypothesis `IsScatteringSolution V w`.
-  `scatteringSolution_existsUnique` shows that under `PotentialHyp V` there is exactly one such
-  `w`.
+  hypothesis that `V` is not identically zero is added; it makes `g₀ > 0` (proved in the library,
+  `LHYUpper.scat_g0_pos`), and the ratio divides by `g₀^{5/2}`.
+* The scattering solution enters as the hypothesis `IsScatteringSolution V w`. The library proves
+  that under `PotentialHyp V` there is exactly one such `w` (`LHYUpper.scattering_exists_unique`).
 * All upper limits are taken in `EReal`. The inner one is along the filter `thermo ρ` on pairs
-  `(N, L)`, which is proper for `ρ > 0` (`thermo_proper`); the outer one is along `ρ → 0⁺`.
-* `energy_nonneg` shows `E ≥ 0` for every state in the infimum defining `e0P`, so `e0P ≥ 0` and the
-  bound is not satisfied by `e0P = -∞`. `gaussian_potentialHyp` shows that `PotentialHyp` holds for
-  the Gaussian `V(x) = e^{-|x|²}`.
+  `(N, L)`, which is proper for `ρ > 0` (`LHYUpper.thermo_neBot`); the outer one is along `ρ → 0⁺`.
+* The library also proves that `E ≥ 0` for every state in the infimum defining `e0P`
+  (`LHYUpper.hamiltonianNonneg`), so `e0P ≥ 0` and the bound is not satisfied by `e0P = -∞`, and
+  that `PotentialHyp` holds for the Gaussian `V(x) = e^{-|x|²}`
+  (`LHYUpper.scat_gaussian_potentialHyp`). These facts are not among the compared statements.
 
 The remarks after Theorem 2.1 in the paper (the same bound with Dirichlet boundary condition in
 the thermodynamic limit, and an error bound) are not part of this statement.
@@ -192,33 +191,6 @@ theorem leeHuangYangUpperBound {V w : R3 → ℝ} (hV : PotentialHyp V)
     (hw : IsScatteringSolution V w) :
     limsup (fun ρ : ℝ => limsup (fun x : ℕ × ℝ => ratio (g0 V w) ρ (e0P x.2 V x.1))
       (thermo ρ)) (𝓝[>] 0) ≤ (cLHY : EReal) := by
-  sorry
-
-/-! ### The hypotheses can be satisfied and the conclusion is not vacuous -/
-
-/-- The Gaussian potential `V(x) = e^{-|x|²}` satisfies the hypotheses of the main result. -/
-theorem gaussian_potentialHyp : PotentialHyp (fun x : R3 => Real.exp (-‖x‖ ^ 2)) := by
-  sorry
-
-/-- Under the hypotheses on `V`, the zero-energy scattering solution exists and is unique. -/
-theorem scatteringSolution_existsUnique {V : R3 → ℝ} (hV : PotentialHyp V) :
-    ∃ w, IsScatteringSolution V w ∧ ∀ w', IsScatteringSolution V w' → w' = w := by
-  sorry
-
-/-- `g₀ = ∫ V(1 - w) > 0`, so the ratio of the main result divides by a positive number. -/
-theorem g0_pos {V w : R3 → ℝ} (hV : PotentialHyp V) (hw : IsScatteringSolution V w) :
-    0 < g0 V w := by
-  sorry
-
-/-- The energy of every finitely supported state is nonnegative, so `e0P` is an infimum of
-nonnegative numbers. -/
-theorem energy_nonneg {V : R3 → ℝ} (hV : PotentialHyp V) {L : ℝ} (hL : 0 < L) (Ψ : Occ →₀ ℂ)
-    (E : ℝ) (hE : HasEnergy L V Ψ E) : 0 ≤ E := by
-  sorry
-
-/-- The filter of the thermodynamic limit at density `ρ > 0` is proper, so the inner upper limit
-of the main result is not taken over the empty filter. -/
-theorem thermo_proper {ρ : ℝ} (hρ : 0 < ρ) : (thermo ρ).NeBot := by
   sorry
 
 end LHYUpper

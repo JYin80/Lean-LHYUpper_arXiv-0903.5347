@@ -79,15 +79,14 @@ lake build
 `lake exe cache get` downloads the compiled Mathlib; `lake build` builds the whole library.
 
 All source files use Lean's module system. `lake build` also builds `Challenge.lean`, which states the main
-result and five consistency statements with `sorry` (one warning each, by design), and `Solution.lean`, which proves
-the same statements from the library.
+result with `sorry` (one warning, by design), and `Solution.lean`, which proves the same statement from the library.
 
 ## Palomar
 
 The repository is laid out for the [Palomar registry](https://palomar-registry.org/) of Lean-verified mathematics:
 [`Challenge.lean`](Challenge.lean) is the statement to audit (it imports Mathlib only and repeats verbatim the
-definitions of `LHYUpper/Model/` that the statements use), [`Solution.lean`](Solution.lean) proves it,
-[`comparator.json`](comparator.json) names the compared theorems and [`formalization.yaml`](formalization.yaml) holds
+definitions of `LHYUpper/Model/Basic.lean` and `LHYUpper/Model/Fock.lean`), [`Solution.lean`](Solution.lean) proves it,
+[`comparator.json`](comparator.json) names the compared theorem and [`formalization.yaml`](formalization.yaml) holds
 the metadata. `python3 scripts/check-lean-sources.py` and `./scripts/verify-comparator.sh` (Linux, needs `bwrap`) run
 the checks locally; submissions go to <https://submit.palomar-registry.org/>.
 
