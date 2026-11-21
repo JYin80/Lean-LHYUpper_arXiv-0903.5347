@@ -90,7 +90,7 @@ automation:
         the hypotheses and the route-level choices. The port to the Lean module system and the
         Challenge/Solution files for Palomar were also written with Claude.
       cost:
-        wall_time: "about 55 hours elapsed (2026-11-16 to 2026-11-19; the work repository has 138 commits, in 30 distinct clock hours)"
+        wall_time: "about 30 hours of active work between 2026-11-16 and 2026-11-19 (138 commits in the work repository; the run was paused for long stretches in between)"
         spend_usd: "not tracked"
         hardware: "local machine"
       prompting_notes: "n/a"
@@ -114,10 +114,14 @@ fidelity:
     version are corrected; none changes Theorem 2.1. Details: docs/PAPER-VS-LEAN.md, Section 3.
 
 review:
-  status: "TEMPLATE: honest review status, for example self-assessed, agent-reviewed or author-verified"
-  reviewers:
-    - "TEMPLATE: reviewer name, or none"
-  notes: "TEMPLATE: describe the statement audit and the mathematical review performed (docs/PAPER-VS-LEAN.md, Section 4, records the consistency checks compiled in the library)"
+  status: "agent-reviewed"
+  reviewers: []
+  notes: >-
+    The Lean proof of each ticket was audited by a separate auditing agent, and a supervising
+    agent checked the final statements for vacuity. Jun Yin checked the statement of the main
+    theorem and of the definitions it uses against the paper. docs/PAPER-VS-LEAN.md, Section 4,
+    records the consistency checks that are compiled in the library. No independent human
+    review has been performed.
 
 alignment:
   namespace: "LHYUpper"
