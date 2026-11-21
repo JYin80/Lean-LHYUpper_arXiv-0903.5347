@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4, for Palomar (https://palomar-registry.org/).
+# Values that still begin with "TEMPLATE:" are facts only the author can state; they must be
+# replaced before submitting (scripts/validate-formalization.rb lists them).
+version: "v0.4"
+
+project:
+  name: "The second order (Lee–Huang–Yang) upper bound for the ground state energy of a dilute Bose gas"
+  description: >-
+    A Lean 4 / Mathlib proof of the main result of Yau and Yin, "The Second Order Upper Bound
+    for the Ground Energy of a Bose Gas" (J. Stat. Phys. 136 (2009), arXiv:0903.5347). For N
+    bosons in the box [0, L]^3 with periodic boundary condition, interacting through a pair
+    potential V that is a nonnegative even Schwartz function, not identically zero and small
+    enough that the Born series converges, the ground state energy per particle e_0 satisfies
+    limsup_{rho -> 0+} limsup_{L -> infinity, N/L^3 -> rho}
+    (e_0 - g_0 rho) / (g_0^{5/2} rho^{3/2}) <= 16/(15 pi^2), where g_0 = int V(1 - w) = 4 pi a,
+    1 - w is the zero-energy scattering solution and a is the scattering length. This is the
+    upper bound in the Lee–Huang–Yang formula e_0 = 4 pi a rho (1 + (128/(15 sqrt(pi)))
+    (rho a^3)^{1/2} + ...). The formalization also proves that the zero-energy scattering
+    solution exists and is unique under these hypotheses, that the Gaussian potential satisfies
+    them, and that the statement is not vacuous (g_0 > 0, the energies are nonnegative, the
+    filter of the thermodynamic limit is proper). Everything the paper takes as known
+    (scattering theory, Riemann sums on the dual lattice, the variational principle, the passage
+    between periodic and Dirichlet boundary conditions) is proved in the library from Mathlib.
+  authors:
+    - "Jun Yin"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Jun Yin"
+
+classification:
+  arxiv: ["math-ph"]
+  msc2020: ["82B10", "81V73"]
+
+sources:
+  - title: "The Second Order Upper Bound for the Ground Energy of a Bose Gas"
+    authors:
+      - "Horng-Tzer Yau"
+      - "Jun Yin"
+    id: "arXiv:0903.5347"
+    type: "paper"
+    location: "J. Stat. Phys. 136 (2009), no. 3, 453-503, doi:10.1007/s10955-009-9792-3; https://arxiv.org/abs/0903.5347"
+    relationship: "formalizes"
+    note: >-
+      The Lean code follows paper/YauYin_LHYUpper_Lean_version.pdf in this repository: the arXiv
+      version with the same numbering, with corrections of intermediate statements and proof
+      steps found during the formalization, and with the steps that the arXiv version only
+      sketches written out (Section 12, 12.1, 12.2 and Appendix A). The main result, Theorem
+      2.1, is unchanged. docs/PAPER-VS-LEAN.md lists every difference. Jun Yin is an author of
+      the paper and of the formalization.
+    license: "unknown"
+    author_endorsement: "TEMPLATE: participated, endorsed, no-response, not-contacted, declined, n/a, or other (Jun Yin is a co-author of the paper; state whether Horng-Tzer Yau was contacted)"
+  - title: "Eigenvalues and eigenfunctions of a Bose system of hard spheres and its low-temperature properties"
+    authors:
+      - "T. D. Lee"
+      - "Kerson Huang"
+      - "C. N. Yang"
+    type: "paper"
+    location: "Phys. Rev. 106 (1957), 1135-1145"
+    relationship: "background"
+    note: "The physical prediction of the second order term; not used in the proof."
+  - title: "Ground-state energy of a low-density Bose gas: A second-order upper bound"
+    authors:
+      - "László Erdős"
+      - "Benjamin Schlein"
+      - "Horng-Tzer Yau"
+    type: "paper"
+    location: "Phys. Rev. A 78 (2008), 053627"
+    relationship: "background"
+    note: "The earlier upper bound, with a constant C > 1 in front of 16/(15 pi^2), that the formalized paper improves."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalized: Theorem 2.1 of the paper in full (thermodynamic limit, periodic boundary
+    condition), through Theorem 3.1, Theorem 2.2, Lemma 2.2, Lemma 2.1 and the duplication
+    step; existence and uniqueness of the zero-energy scattering solution; the variational
+    principle; nonnegativity of the Hamiltonian on finitely supported states. In the statement,
+    e_0 is the infimum of <Psi, H Psi>/N over finitely supported normalized N-particle states
+    in the occupation-number basis, with values in EReal; it is at least inf spec H / N, so the
+    bound implies the paper's, but neither this inequality nor the equality of the two is
+    formalized. Not formalized: the remarks after Theorem 2.1 (the same bound with Dirichlet
+    boundary condition in the thermodynamic limit, and an error bound for (2.2)); Corollary 5.1
+    as an iterated limit; the heuristic material of the introduction and of Section 3.1.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["TEMPLATE: model names used (the project records mention claude-opus-5, claude-sonnet-5 and Claude Fable 5.2); confirm the list"]
+      framework: "Claude Code"
+      tool_setup: >-
+        AI-assisted: a team of Claude Code agents (a dispatcher, workers on ticket worktrees and
+        reviewing agents) wrote the Lean code and the comparison documents from the paper's TeX
+        source, under the direction of Jun Yin, who fixed the target statements, the reading of
+        the hypotheses and the route-level choices. The port to the Lean module system and the
+        Challenge/Solution files for Palomar were also written with Claude.
+      cost:
+        wall_time: "TEMPLATE: approximate elapsed effort (the work repository has 138 commits dated 2026-11-16 to 2026-11-19)"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    The mathematical source is a paper by Horng-Tzer Yau and Jun Yin. The Lean proofs were
+    produced by AI agents; the statements of the main theorem and of the definitions it uses
+    were fixed and checked by Jun Yin against the paper.
+
+fidelity:
+  divergences: >-
+    (1) e_0^P is defined as an infimum over finitely supported normalized occupation-number
+    states rather than as inf spec H / N. (2) "Smooth with fast decay" is read as Schwartz,
+    "symmetric" as even, and the smallness of V as sup_x int V(y)/(4 pi |x - y|) dy < 1; V not
+    identically zero is added. (3) The scattering solution is a hypothesis of the main
+    statement; its existence and uniqueness are proved separately. (4) The interaction of (2.1)
+    uses the Fourier transform of V on R^3 at the lattice momenta, which in position space is
+    the periodization sum_n V(x + nL); (2.1) has no factor 1/2, so each pair is counted twice.
+    (5) Upper limits are taken in EReal; the small boxes of Sections 2 and 3 run along
+    rho_N = N^{-8/17}. (6) A number of intermediate statements and proof steps of the arXiv
+    version are corrected; none changes Theorem 2.1. Details: docs/PAPER-VS-LEAN.md, Section 3.
+
+review:
+  status: "TEMPLATE: honest review status, for example self-assessed, agent-reviewed or author-verified"
+  reviewers:
+    - "TEMPLATE: reviewer name, or none"
+  notes: "TEMPLATE: describe the statement audit and the mathematical review performed (docs/PAPER-VS-LEAN.md, Section 4, records the consistency checks compiled in the library)"
+
+alignment:
+  namespace: "LHYUpper"
+  statements:
+    - source: "Theorem 2.1, (2.2)"
+      lean: "LHYUpper.leeHuangYangUpperBound"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean by LHYUpper.mainTheorem (LHYUpper/Thermo/Duplication.lean), whose statement LHYUpper.Stmt.MainTheorem unfolds to the one written out in Challenge.lean."
+    - source: "Section 2, the zero-energy scattering solution"
+      lean: "LHYUpper.scatteringSolution_existsUnique"
+      module: "Challenge"
+      status: "proved"
+      note: "The paper takes existence as known. Proved by LHYUpper.scattering_exists_unique."
+    - source: "Hypotheses of Theorem 2.1"
+      lean: "LHYUpper.gaussian_potentialHyp"
+      module: "Challenge"
+      status: "proved"
+      note: "Consistency check, not a result of the paper: the Gaussian satisfies PotentialHyp. Proved by LHYUpper.scat_gaussian_potentialHyp."
+    - source: "Section 2, g_0 = 4 pi a > 0"
+      lean: "LHYUpper.g0_pos"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved by LHYUpper.scat_g0_pos."
+    - source: "Hamiltonian (2.1)"
+      lean: "LHYUpper.energy_nonneg"
+      module: "Challenge"
+      status: "proved"
+      note: "Consistency check: energies in the infimum defining e0P are nonnegative. Proved by LHYUpper.hamiltonianNonneg."
+    - source: "Section 2, the thermodynamic limit"
+      lean: "LHYUpper.thermo_proper"
+      module: "Challenge"
+      status: "proved"
+      note: "Consistency check: the filter of the inner upper limit is proper. Proved by LHYUpper.thermo_neBot."
+
+acknowledgements: "Mathlib and the Lean community; Lean 4 (Lean FRO); Claude Code (Anthropic)."

@@ -1,9 +1,13 @@
-import LHYUpper.Thermo.Scales
-import LHYUpper.Scattering.Solution
-import LHYUpper.Thermo.Bridge
-import LHYUpper.Thermo.Product
-import LHYUpper.Thermo.InterBox
-import LHYUpper.Position.Lemma21
+module
+
+public import LHYUpper.Thermo.Scales
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.Thermo.Bridge
+public import LHYUpper.Thermo.Product
+public import LHYUpper.Thermo.InterBox
+public import LHYUpper.Position.Lemma21
+
+@[expose] public section
 
 /-! # The duplication step after Lemma 2.1 [thm1] (§2.1)
 

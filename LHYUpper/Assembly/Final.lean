@@ -1,11 +1,15 @@
-import LHYUpper.Assembly.Theorem31
-import LHYUpper.Kinetic.Lemma41
-import LHYUpper.Pair.S1S2
-import LHYUpper.Pair.S3
-import LHYUpper.OneLeg.Lemma45
-import LHYUpper.FourLegs.HardAssembly
-import LHYUpper.Scattering.Identities
-import LHYUpper.TrialState.Normalization
+module
+
+public import LHYUpper.Assembly.Theorem31
+public import LHYUpper.Kinetic.Lemma41
+public import LHYUpper.Pair.S1S2
+public import LHYUpper.Pair.S3
+public import LHYUpper.OneLeg.Lemma45
+public import LHYUpper.FourLegs.HardAssembly
+public import LHYUpper.Scattering.Identities
+public import LHYUpper.TrialState.Normalization
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

@@ -1,6 +1,10 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Riemann.Bridge
-import LHYUpper.Scattering.Identities
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Riemann.Bridge
+public import LHYUpper.Scattering.Identities
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

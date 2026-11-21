@@ -1,7 +1,11 @@
-import LHYUpper.Particles.UpperL
-import LHYUpper.Pair.Identities
-import LHYUpper.Pair.Id4a2
-import LHYUpper.Particles.Lemma55
+module
+
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.Pair.Identities
+public import LHYUpper.Pair.Id4a2
+public import LHYUpper.Particles.Lemma55
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

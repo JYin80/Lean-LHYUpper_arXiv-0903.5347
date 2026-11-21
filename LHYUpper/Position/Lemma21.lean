@@ -1,7 +1,11 @@
-import LHYUpper.Scattering.Solution
-import LHYUpper.Position.Lemma22
-import LHYUpper.Position.DirichletFacts
-import LHYUpper.Assembly.Final
+module
+
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.Position.Lemma22
+public import LHYUpper.Position.DirichletFacts
+public import LHYUpper.Assembly.Final
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

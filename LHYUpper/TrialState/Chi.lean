@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.Reorder
+module
+
+public import LHYUpper.TrialState.Reorder
+
+@[expose] public section
 
 /-!
 # Proposition 11.1 [propchi]

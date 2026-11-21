@@ -1,8 +1,12 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Scattering.Solution
-import LHYUpper.FourLegs.Section9
-import LHYUpper.FourLegs.HighLegs
-import LHYUpper.FourLegs.MainTerm
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.FourLegs.Section9
+public import LHYUpper.FourLegs.HighLegs
+public import LHYUpper.FourLegs.MainTerm
+
+@[expose] public section
 
 /-!
 # Lemma 4.6 [lemHAS2] from §9, §10 and Lemma 11.1 (§4, §9–§11)

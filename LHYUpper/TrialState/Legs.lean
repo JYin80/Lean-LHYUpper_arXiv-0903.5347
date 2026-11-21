@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.Reorder
+module
+
+public import LHYUpper.TrialState.Reorder
+
+@[expose] public section
 
 /-!
 # Matrix elements with few legs: §7, §8, §9, §10

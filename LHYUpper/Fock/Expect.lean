@@ -1,4 +1,8 @@
-import LHYUpper.Fock.A4
+module
+
+public import LHYUpper.Fock.A4
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

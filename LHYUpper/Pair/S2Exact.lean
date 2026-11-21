@@ -1,5 +1,9 @@
-import LHYUpper.Particles.Basic
-import LHYUpper.Pair.Identities
+module
+
+public import LHYUpper.Particles.Basic
+public import LHYUpper.Pair.Identities
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

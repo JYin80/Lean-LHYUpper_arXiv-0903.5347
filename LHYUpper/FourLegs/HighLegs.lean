@@ -1,6 +1,10 @@
-import LHYUpper.Particles.UpperIH
-import LHYUpper.FourLegs.Defs
-import LHYUpper.FourLegs.Classes
+module
+
+public import LHYUpper.Particles.UpperIH
+public import LHYUpper.FourLegs.Defs
+public import LHYUpper.FourLegs.Classes
+
+@[expose] public section
 
 /-!
 # The four nonzero legs of `H_{A2}`: special legs, the exact identity, Lemma 11.1 from Lemma 11.2

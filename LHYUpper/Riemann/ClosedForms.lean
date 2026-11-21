@@ -1,4 +1,8 @@
-import LHYUpper.Riemann.Radial
+module
+
+public import LHYUpper.Riemann.Radial
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ENNReal

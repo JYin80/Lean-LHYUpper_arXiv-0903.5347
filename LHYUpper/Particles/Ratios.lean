@@ -1,5 +1,9 @@
-import LHYUpper.Particles.Basic
-import LHYUpper.TrialState.Legs
+module
+
+public import LHYUpper.Particles.Basic
+public import LHYUpper.TrialState.Legs
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

@@ -1,6 +1,10 @@
-import LHYUpper.Riemann.MomentumSums
-import LHYUpper.Scattering.Lambda
-import LHYUpper.Scattering.MomentumG
+module
+
+public import LHYUpper.Riemann.MomentumSums
+public import LHYUpper.Scattering.Lambda
+public import LHYUpper.Scattering.MomentumG
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

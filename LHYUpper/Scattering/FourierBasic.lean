@@ -1,5 +1,9 @@
-import LHYUpper.Model.Basic
-import LHYUpper.Scattering.Gaussian
+module
+
+public import LHYUpper.Model.Basic
+public import LHYUpper.Scattering.Gaussian
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

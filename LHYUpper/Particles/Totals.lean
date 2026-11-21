@@ -1,6 +1,10 @@
-import LHYUpper.Particles.UpperIH
-import LHYUpper.Particles.UpperL
-import LHYUpper.Riemann.ScaledLimits
+module
+
+public import LHYUpper.Particles.UpperIH
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.Riemann.ScaledLimits
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

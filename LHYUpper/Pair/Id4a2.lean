@@ -1,9 +1,13 @@
-import LHYUpper.Fock.A4
-import LHYUpper.Riemann.Cells
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.FIdentities
-import LHYUpper.TrialState.Legs
-import LHYUpper.Pair.Identities
+module
+
+public import LHYUpper.Fock.A4
+public import LHYUpper.Riemann.Cells
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.FIdentities
+public import LHYUpper.TrialState.Legs
+public import LHYUpper.Pair.Identities
+
+@[expose] public section
 
 /-!
 # Lemma 7.3 [id4a2]: `⟨a†_u a†_{−u} a_v a_{−v}⟩_Ψ` and `P(u, v)`

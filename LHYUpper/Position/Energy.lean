@@ -1,6 +1,10 @@
-import LHYUpper.Scattering.Solution
-import LHYUpper.Position.SymWave
-import LHYUpper.Position.Periodize
+module
+
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.Position.SymWave
+public import LHYUpper.Position.Periodize
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

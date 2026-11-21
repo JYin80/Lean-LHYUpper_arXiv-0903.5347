@@ -1,7 +1,11 @@
-import LHYUpper.Fock.Expect
-import LHYUpper.Scattering.Solution
-import LHYUpper.Particles.Lower
-import LHYUpper.Particles.Lemma55
+module
+
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.Particles.Lower
+public import LHYUpper.Particles.Lemma55
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

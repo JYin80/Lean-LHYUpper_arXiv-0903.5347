@@ -1,4 +1,8 @@
-import LHYUpper.Scattering.Solution
+module
+
+public import LHYUpper.Scattering.Solution
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

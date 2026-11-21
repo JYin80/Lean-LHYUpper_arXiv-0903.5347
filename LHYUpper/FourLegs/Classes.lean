@@ -1,9 +1,13 @@
-import LHYUpper.Fock.Decomp
-import LHYUpper.Fock.Expect
-import LHYUpper.Riemann.Bridge
-import LHYUpper.TrialState.FRatio
-import LHYUpper.TrialState.Normalization
-import LHYUpper.FourLegs.Defs
+module
+
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Riemann.Bridge
+public import LHYUpper.TrialState.FRatio
+public import LHYUpper.TrialState.Normalization
+public import LHYUpper.FourLegs.Defs
+
+@[expose] public section
 
 /-!
 # The four nonzero legs of `H_{A2}`: classes, summability, Schwarz bound, ratio (§9)

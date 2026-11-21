@@ -1,5 +1,9 @@
-import LHYUpper.Model.Dirichlet
-import LHYUpper.TrialState.Defs
+module
+
+public import LHYUpper.Model.Dirichlet
+public import LHYUpper.TrialState.Defs
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

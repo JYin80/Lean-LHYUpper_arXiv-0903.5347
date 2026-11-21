@@ -1,6 +1,10 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.Legs
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.Legs
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

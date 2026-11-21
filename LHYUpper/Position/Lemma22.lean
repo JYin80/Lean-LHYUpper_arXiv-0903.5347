@@ -1,8 +1,12 @@
-import LHYUpper.Scattering.Solution
-import LHYUpper.Position.SymWave
-import LHYUpper.Position.Energy
-import LHYUpper.Position.DirichletFacts
-import LHYUpper.Position.Localize
+module
+
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.Position.SymWave
+public import LHYUpper.Position.Energy
+public import LHYUpper.Position.DirichletFacts
+public import LHYUpper.Position.Localize
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

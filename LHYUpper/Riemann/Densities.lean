@@ -1,4 +1,8 @@
-import LHYUpper.Riemann.ClosedForms
+module
+
+public import LHYUpper.Riemann.ClosedForms
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ENNReal

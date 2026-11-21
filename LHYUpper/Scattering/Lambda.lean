@@ -1,5 +1,9 @@
-import LHYUpper.Scattering.WMomentum
-import LHYUpper.TrialState.Regions
+module
+
+public import LHYUpper.Scattering.WMomentum
+public import LHYUpper.TrialState.Regions
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

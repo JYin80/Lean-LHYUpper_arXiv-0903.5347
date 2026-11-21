@@ -1,5 +1,10 @@
-import LHYUpper.Particles.Ratios
-import LHYUpper.Riemann.Cells
+module
+
+public import LHYUpper.Particles.Ratios
+public import LHYUpper.Riemann.Cells
+
+@[expose] public section
+
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate
 

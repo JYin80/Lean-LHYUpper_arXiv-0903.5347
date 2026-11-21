@@ -1,98 +1,100 @@
-import LHYUpper.Model.Basic
-import LHYUpper.Model.Fock
-import LHYUpper.Model.Dirichlet
-import LHYUpper.TrialState.Defs
-import LHYUpper.Statements
-import LHYUpper.Scattering.Gaussian
-import LHYUpper.Scattering.MaxPrinciple
-import LHYUpper.Scattering.Newton
-import LHYUpper.Fock.DecompDefs
-import LHYUpper.Assembly.Section4
-import LHYUpper.Scattering.FourierBasic
-import LHYUpper.Fock.A4
-import LHYUpper.Scattering.Born
-import LHYUpper.Fock.Expect
-import LHYUpper.Scattering.NewtonDeriv
-import LHYUpper.Fock.Decomp
-import LHYUpper.Scattering.NewtonFourier
-import LHYUpper.TrialState.Regions
-import LHYUpper.Fock.Variational
-import LHYUpper.TrialState.MBasic
-import LHYUpper.Scattering.Regularity
-import LHYUpper.Assembly.Theorem31
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.MStar
-import LHYUpper.Riemann.Defs
-import LHYUpper.Riemann.Radial
-import LHYUpper.TrialState.FIdentities
-import LHYUpper.Scattering.Decay
-import LHYUpper.Scattering.MomentumG
-import LHYUpper.Riemann.Cells
-import LHYUpper.Riemann.ClosedForms
-import LHYUpper.TrialState.Normalization
-import LHYUpper.TrialState.Reorder
-import LHYUpper.Riemann.Shell
-import LHYUpper.Scattering.WMomentum
-import LHYUpper.Riemann.Densities
-import LHYUpper.Riemann.Scaled
-import LHYUpper.Riemann.MomentumSums
-import LHYUpper.TrialState.Legs
-import LHYUpper.Scattering.Lambda
-import LHYUpper.Scattering.Identities
-import LHYUpper.Particles.Basic
-import LHYUpper.TrialState.Chi
-import LHYUpper.Riemann.Bridge
-import LHYUpper.Riemann.ScaledLimits
-import LHYUpper.TrialState.FRatio
-import LHYUpper.Particles.Ratios
-import LHYUpper.Particles.UpperL
-import LHYUpper.Particles.UpperIH
-import LHYUpper.Kinetic.Basic
-import LHYUpper.Particles.Totals
-import LHYUpper.OneLeg.Forms
-import LHYUpper.Kinetic.LowMid
-import LHYUpper.Kinetic.MainTerm
-import LHYUpper.OneLeg.FirstPair
-import LHYUpper.OneLeg.Ratio
-import LHYUpper.FourLegs.Defs
-import LHYUpper.Particles.Prop55
-import LHYUpper.Pair.Identities
-import LHYUpper.FourLegs.Classes
-import LHYUpper.Pair.Sums
-import LHYUpper.Pair.S2Exact
-import LHYUpper.Particles.Lower
-import LHYUpper.Pair.Id4a2
-import LHYUpper.Particles.Lemma55
-import LHYUpper.FourLegs.HighLegs
-import LHYUpper.Particles.PaperForms
-import LHYUpper.Kinetic.Lemma41
-import LHYUpper.OneLeg.Sums
-import LHYUpper.Pair.S1S2
-import LHYUpper.FourLegs.Section9
-import LHYUpper.OneLeg.Lemma45
-import LHYUpper.Pair.UUVV
-import LHYUpper.FourLegs.HardRep
-import LHYUpper.Pair.S3Bound
-import LHYUpper.FourLegs.HardBounds
-import LHYUpper.FourLegs.MainTerm
-import LHYUpper.FourLegs.HardGraph
-import LHYUpper.FourLegs.Assembly
-import LHYUpper.FourLegs.HardJoint
-import LHYUpper.Pair.S3
-import LHYUpper.FourLegs.HardAssembly
-import LHYUpper.Assembly.Final
-import LHYUpper.Position.DirichletFacts
-import LHYUpper.Position.Basic
-import LHYUpper.Position.Profile
-import LHYUpper.Position.Periodize
-import LHYUpper.Position.SymWave
-import LHYUpper.Thermo.Scales
-import LHYUpper.Position.Localize
-import LHYUpper.Position.Energy
-import LHYUpper.Thermo.Product
-import LHYUpper.Thermo.InterBox
-import LHYUpper.Position.Lemma22
-import LHYUpper.Thermo.Fourier
-import LHYUpper.Thermo.Bridge
-import LHYUpper.Position.Lemma21
-import LHYUpper.Thermo.Duplication
+module
+
+public import LHYUpper.Model.Basic
+public import LHYUpper.Model.Fock
+public import LHYUpper.Model.Dirichlet
+public import LHYUpper.TrialState.Defs
+public import LHYUpper.Statements
+public import LHYUpper.Scattering.Gaussian
+public import LHYUpper.Scattering.MaxPrinciple
+public import LHYUpper.Scattering.Newton
+public import LHYUpper.Fock.DecompDefs
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Scattering.FourierBasic
+public import LHYUpper.Fock.A4
+public import LHYUpper.Scattering.Born
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Scattering.NewtonDeriv
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Scattering.NewtonFourier
+public import LHYUpper.TrialState.Regions
+public import LHYUpper.Fock.Variational
+public import LHYUpper.TrialState.MBasic
+public import LHYUpper.Scattering.Regularity
+public import LHYUpper.Assembly.Theorem31
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.MStar
+public import LHYUpper.Riemann.Defs
+public import LHYUpper.Riemann.Radial
+public import LHYUpper.TrialState.FIdentities
+public import LHYUpper.Scattering.Decay
+public import LHYUpper.Scattering.MomentumG
+public import LHYUpper.Riemann.Cells
+public import LHYUpper.Riemann.ClosedForms
+public import LHYUpper.TrialState.Normalization
+public import LHYUpper.TrialState.Reorder
+public import LHYUpper.Riemann.Shell
+public import LHYUpper.Scattering.WMomentum
+public import LHYUpper.Riemann.Densities
+public import LHYUpper.Riemann.Scaled
+public import LHYUpper.Riemann.MomentumSums
+public import LHYUpper.TrialState.Legs
+public import LHYUpper.Scattering.Lambda
+public import LHYUpper.Scattering.Identities
+public import LHYUpper.Particles.Basic
+public import LHYUpper.TrialState.Chi
+public import LHYUpper.Riemann.Bridge
+public import LHYUpper.Riemann.ScaledLimits
+public import LHYUpper.TrialState.FRatio
+public import LHYUpper.Particles.Ratios
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.Particles.UpperIH
+public import LHYUpper.Kinetic.Basic
+public import LHYUpper.Particles.Totals
+public import LHYUpper.OneLeg.Forms
+public import LHYUpper.Kinetic.LowMid
+public import LHYUpper.Kinetic.MainTerm
+public import LHYUpper.OneLeg.FirstPair
+public import LHYUpper.OneLeg.Ratio
+public import LHYUpper.FourLegs.Defs
+public import LHYUpper.Particles.Prop55
+public import LHYUpper.Pair.Identities
+public import LHYUpper.FourLegs.Classes
+public import LHYUpper.Pair.Sums
+public import LHYUpper.Pair.S2Exact
+public import LHYUpper.Particles.Lower
+public import LHYUpper.Pair.Id4a2
+public import LHYUpper.Particles.Lemma55
+public import LHYUpper.FourLegs.HighLegs
+public import LHYUpper.Particles.PaperForms
+public import LHYUpper.Kinetic.Lemma41
+public import LHYUpper.OneLeg.Sums
+public import LHYUpper.Pair.S1S2
+public import LHYUpper.FourLegs.Section9
+public import LHYUpper.OneLeg.Lemma45
+public import LHYUpper.Pair.UUVV
+public import LHYUpper.FourLegs.HardRep
+public import LHYUpper.Pair.S3Bound
+public import LHYUpper.FourLegs.HardBounds
+public import LHYUpper.FourLegs.MainTerm
+public import LHYUpper.FourLegs.HardGraph
+public import LHYUpper.FourLegs.Assembly
+public import LHYUpper.FourLegs.HardJoint
+public import LHYUpper.Pair.S3
+public import LHYUpper.FourLegs.HardAssembly
+public import LHYUpper.Assembly.Final
+public import LHYUpper.Position.DirichletFacts
+public import LHYUpper.Position.Basic
+public import LHYUpper.Position.Profile
+public import LHYUpper.Position.Periodize
+public import LHYUpper.Position.SymWave
+public import LHYUpper.Thermo.Scales
+public import LHYUpper.Position.Localize
+public import LHYUpper.Position.Energy
+public import LHYUpper.Thermo.Product
+public import LHYUpper.Thermo.InterBox
+public import LHYUpper.Position.Lemma22
+public import LHYUpper.Thermo.Fourier
+public import LHYUpper.Thermo.Bridge
+public import LHYUpper.Position.Lemma21
+public import LHYUpper.Thermo.Duplication

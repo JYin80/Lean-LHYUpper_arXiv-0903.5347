@@ -1,4 +1,8 @@
-import LHYUpper.Particles.Totals
+module
+
+public import LHYUpper.Particles.Totals
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

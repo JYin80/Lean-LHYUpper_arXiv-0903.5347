@@ -1,6 +1,10 @@
-import LHYUpper.Fock.DecompDefs
-import LHYUpper.Fock.A4
-import LHYUpper.Scattering.FourierBasic
+module
+
+public import LHYUpper.Fock.DecompDefs
+public import LHYUpper.Fock.A4
+public import LHYUpper.Scattering.FourierBasic
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

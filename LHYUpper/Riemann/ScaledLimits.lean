@@ -1,5 +1,9 @@
-import LHYUpper.Riemann.Scaled
-import LHYUpper.Riemann.Densities
+module
+
+public import LHYUpper.Riemann.Scaled
+public import LHYUpper.Riemann.Densities
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ENNReal

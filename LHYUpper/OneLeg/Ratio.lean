@@ -1,8 +1,12 @@
-import LHYUpper.Particles.UpperIH
-import LHYUpper.Particles.UpperL
-import LHYUpper.Scattering.Lambda
-import LHYUpper.TrialState.FRatio
-import LHYUpper.OneLeg.Forms
+module
+
+public import LHYUpper.Particles.UpperIH
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.Scattering.Lambda
+public import LHYUpper.TrialState.FRatio
+public import LHYUpper.OneLeg.Forms
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

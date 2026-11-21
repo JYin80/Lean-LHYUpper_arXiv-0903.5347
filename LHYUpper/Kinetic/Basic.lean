@@ -1,6 +1,10 @@
-import LHYUpper.Particles.Basic
-import LHYUpper.Riemann.Cells
-import LHYUpper.Scattering.Lambda
+module
+
+public import LHYUpper.Particles.Basic
+public import LHYUpper.Riemann.Cells
+public import LHYUpper.Scattering.Lambda
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

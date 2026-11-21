@@ -1,5 +1,9 @@
-import LHYUpper.Scattering.Decay
-import LHYUpper.Scattering.FourierBasic
+module
+
+public import LHYUpper.Scattering.Decay
+public import LHYUpper.Scattering.FourierBasic
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

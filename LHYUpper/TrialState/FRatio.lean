@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.Legs
+module
+
+public import LHYUpper.TrialState.Legs
+
+@[expose] public section
 
 /-!
 # The weights `f(α)` and their ratios: (3.18), (8.11), Lemma 9.1

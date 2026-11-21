@@ -1,4 +1,8 @@
-import LHYUpper.Scattering.WMomentum
+module
+
+public import LHYUpper.Scattering.WMomentum
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

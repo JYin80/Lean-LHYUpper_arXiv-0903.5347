@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.FIdentities
+module
+
+public import LHYUpper.TrialState.FIdentities
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

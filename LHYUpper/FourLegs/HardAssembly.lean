@@ -1,8 +1,12 @@
-import LHYUpper.FourLegs.HighLegs
-import LHYUpper.FourLegs.HardRep
-import LHYUpper.FourLegs.HardBounds
-import LHYUpper.FourLegs.HardJoint
-import LHYUpper.FourLegs.Assembly
+module
+
+public import LHYUpper.FourLegs.HighLegs
+public import LHYUpper.FourLegs.HardRep
+public import LHYUpper.FourLegs.HardBounds
+public import LHYUpper.FourLegs.HardJoint
+public import LHYUpper.FourLegs.Assembly
+
+@[expose] public section
 
 /-!
 # Lemma 11.2 [thehardestlemma], Lemma 11.1 [113] and Lemma 4.6 [lemHAS2]

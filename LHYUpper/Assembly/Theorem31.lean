@@ -1,6 +1,10 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Fock.Decomp
-import LHYUpper.Fock.Variational
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Fock.Variational
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

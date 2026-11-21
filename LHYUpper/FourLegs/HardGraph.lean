@@ -1,4 +1,8 @@
-import LHYUpper.FourLegs.Defs
+module
+
+public import LHYUpper.FourLegs.Defs
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

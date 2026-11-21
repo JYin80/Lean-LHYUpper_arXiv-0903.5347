@@ -1,6 +1,10 @@
-import LHYUpper.Position.Periodize
-import LHYUpper.Thermo.Fourier
-import LHYUpper.Position.Energy
+module
+
+public import LHYUpper.Position.Periodize
+public import LHYUpper.Thermo.Fourier
+public import LHYUpper.Position.Energy
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

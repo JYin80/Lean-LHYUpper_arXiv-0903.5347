@@ -1,13 +1,17 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Fock.Expect
-import LHYUpper.Riemann.ScaledLimits
-import LHYUpper.Scattering.Lambda
-import LHYUpper.TrialState.Normalization
-import LHYUpper.Pair.Identities
-import LHYUpper.Pair.Sums
-import LHYUpper.Pair.S2Exact
-import LHYUpper.Particles.Lower
-import LHYUpper.Particles.Lemma55
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Riemann.ScaledLimits
+public import LHYUpper.Scattering.Lambda
+public import LHYUpper.TrialState.Normalization
+public import LHYUpper.Pair.Identities
+public import LHYUpper.Pair.Sums
+public import LHYUpper.Pair.S2Exact
+public import LHYUpper.Particles.Lower
+public import LHYUpper.Particles.Lemma55
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

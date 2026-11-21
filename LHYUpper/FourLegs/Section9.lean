@@ -1,8 +1,12 @@
-import LHYUpper.Particles.UpperIH
-import LHYUpper.Particles.UpperL
-import LHYUpper.TrialState.FRatio
-import LHYUpper.FourLegs.Defs
-import LHYUpper.FourLegs.Classes
+module
+
+public import LHYUpper.Particles.UpperIH
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.TrialState.FRatio
+public import LHYUpper.FourLegs.Defs
+public import LHYUpper.FourLegs.Classes
+
+@[expose] public section
 
 /-!
 # Proposition 9.1 and Lemma 9.2: the four nonzero legs of `H_{A2}` in the classes with a leg in `P_L`

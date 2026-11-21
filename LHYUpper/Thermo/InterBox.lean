@@ -1,4 +1,8 @@
-import LHYUpper.Position.Periodize
+module
+
+public import LHYUpper.Position.Periodize
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

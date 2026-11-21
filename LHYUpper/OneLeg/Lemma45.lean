@@ -1,7 +1,11 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Assembly.Theorem31
-import LHYUpper.OneLeg.Forms
-import LHYUpper.OneLeg.Sums
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Assembly.Theorem31
+public import LHYUpper.OneLeg.Forms
+public import LHYUpper.OneLeg.Sums
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

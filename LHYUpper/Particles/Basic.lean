@@ -1,6 +1,10 @@
-import LHYUpper.Fock.Expect
-import LHYUpper.TrialState.Normalization
-import LHYUpper.Scattering.Solution
+module
+
+public import LHYUpper.Fock.Expect
+public import LHYUpper.TrialState.Normalization
+public import LHYUpper.Scattering.Solution
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

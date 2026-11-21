@@ -1,4 +1,8 @@
-import LHYUpper.Riemann.Cells
+module
+
+public import LHYUpper.Riemann.Cells
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ENNReal

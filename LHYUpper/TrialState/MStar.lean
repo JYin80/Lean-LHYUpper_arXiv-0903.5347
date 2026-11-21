@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.MBasic
+module
+
+public import LHYUpper.TrialState.MBasic
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

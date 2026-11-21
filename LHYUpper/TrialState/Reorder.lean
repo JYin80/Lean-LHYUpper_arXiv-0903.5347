@@ -1,4 +1,8 @@
-import LHYUpper.TrialState.MStar
+module
+
+public import LHYUpper.TrialState.MStar
+
+@[expose] public section
 
 /-!
 # Reordering of pair creations; Propositions 5.2 [prop1] and 5.3 [prop2]

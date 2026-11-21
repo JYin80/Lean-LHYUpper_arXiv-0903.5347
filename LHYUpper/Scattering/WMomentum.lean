@@ -1,5 +1,9 @@
-import LHYUpper.Scattering.MomentumG
-import LHYUpper.Scattering.NewtonFourier
+module
+
+public import LHYUpper.Scattering.MomentumG
+public import LHYUpper.Scattering.NewtonFourier
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

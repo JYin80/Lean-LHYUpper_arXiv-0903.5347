@@ -1,11 +1,15 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.OneLeg.FirstPair
-import LHYUpper.OneLeg.Ratio
-import LHYUpper.Particles.Totals
-import LHYUpper.Riemann.Bridge
-import LHYUpper.Scattering.Identities
-import LHYUpper.Particles.Lower
-import LHYUpper.Particles.Lemma55
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.OneLeg.FirstPair
+public import LHYUpper.OneLeg.Ratio
+public import LHYUpper.Particles.Totals
+public import LHYUpper.Riemann.Bridge
+public import LHYUpper.Scattering.Identities
+public import LHYUpper.Particles.Lower
+public import LHYUpper.Particles.Lemma55
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

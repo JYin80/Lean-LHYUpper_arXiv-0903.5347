@@ -1,10 +1,14 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Fock.Expect
-import LHYUpper.Riemann.ScaledLimits
-import LHYUpper.Scattering.WMomentum
-import LHYUpper.Pair.Sums
-import LHYUpper.Pair.S3Bound
-import LHYUpper.Particles.Lemma55
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Riemann.ScaledLimits
+public import LHYUpper.Scattering.WMomentum
+public import LHYUpper.Pair.Sums
+public import LHYUpper.Pair.S3Bound
+public import LHYUpper.Particles.Lemma55
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

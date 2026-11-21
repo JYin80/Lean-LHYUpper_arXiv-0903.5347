@@ -1,5 +1,9 @@
-import LHYUpper.Position.Basic
-import LHYUpper.Position.DirichletFacts
+module
+
+public import LHYUpper.Position.Basic
+public import LHYUpper.Position.DirichletFacts
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

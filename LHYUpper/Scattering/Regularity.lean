@@ -1,6 +1,10 @@
-import LHYUpper.Scattering.Born
-import LHYUpper.Scattering.NewtonDeriv
-import LHYUpper.Scattering.NewtonFourier
+module
+
+public import LHYUpper.Scattering.Born
+public import LHYUpper.Scattering.NewtonDeriv
+public import LHYUpper.Scattering.NewtonFourier
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

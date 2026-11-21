@@ -1,9 +1,13 @@
-import LHYUpper.FourLegs.Defs
-import LHYUpper.Riemann.Defs
-import LHYUpper.TrialState.Chi
-import LHYUpper.FourLegs.HardRep
-import LHYUpper.FourLegs.HardGraph
-import LHYUpper.FourLegs.HardBounds
+module
+
+public import LHYUpper.FourLegs.Defs
+public import LHYUpper.Riemann.Defs
+public import LHYUpper.TrialState.Chi
+public import LHYUpper.FourLegs.HardRep
+public import LHYUpper.FourLegs.HardGraph
+public import LHYUpper.FourLegs.HardBounds
+
+@[expose] public section
 
 /-!
 # The joint representation of `β` and `γ` in Lemma 11.2 [thehardestlemma]

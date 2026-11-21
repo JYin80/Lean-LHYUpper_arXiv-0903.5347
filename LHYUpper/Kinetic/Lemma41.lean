@@ -1,9 +1,13 @@
-import LHYUpper.Kinetic.Basic
-import LHYUpper.Kinetic.LowMid
-import LHYUpper.Kinetic.MainTerm
-import LHYUpper.Particles.Totals
-import LHYUpper.Particles.Lemma55
-import LHYUpper.Assembly.Theorem31
+module
+
+public import LHYUpper.Kinetic.Basic
+public import LHYUpper.Kinetic.LowMid
+public import LHYUpper.Kinetic.MainTerm
+public import LHYUpper.Particles.Totals
+public import LHYUpper.Particles.Lemma55
+public import LHYUpper.Assembly.Theorem31
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

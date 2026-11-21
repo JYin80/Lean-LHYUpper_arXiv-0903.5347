@@ -1,4 +1,8 @@
-import LHYUpper.Model.Basic
+module
+
+public import LHYUpper.Model.Basic
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

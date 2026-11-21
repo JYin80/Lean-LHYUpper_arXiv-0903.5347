@@ -1,7 +1,7 @@
 name = "LHYUpper"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["LHYUpper"]
+defaultTargets = ["LHYUpper", "Challenge", "Solution"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -16,3 +16,13 @@ rev = "v4.36.0"
 
 [[lean_lib]]
 name = "LHYUpper"
+
+# Palomar statement surface: `Challenge` states the results (imports Mathlib only),
+# `Solution` proves the same statements from the library. See `comparator.json`.
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

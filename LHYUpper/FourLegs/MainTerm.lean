@@ -1,13 +1,17 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Particles.UpperL
-import LHYUpper.Riemann.Bridge
-import LHYUpper.Scattering.Identities
-import LHYUpper.FourLegs.Defs
-import LHYUpper.FourLegs.Classes
-import LHYUpper.FourLegs.HighLegs
-import LHYUpper.Particles.Lower
-import LHYUpper.Particles.Lemma55
-import LHYUpper.OneLeg.Sums
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Particles.UpperL
+public import LHYUpper.Riemann.Bridge
+public import LHYUpper.Scattering.Identities
+public import LHYUpper.FourLegs.Defs
+public import LHYUpper.FourLegs.Classes
+public import LHYUpper.FourLegs.HighLegs
+public import LHYUpper.Particles.Lower
+public import LHYUpper.Particles.Lemma55
+public import LHYUpper.OneLeg.Sums
+
+@[expose] public section
 
 /-!
 # The main term of the four nonzero legs: (10.20) [temp8.150] and Lemma 10.2 [101]

@@ -1,5 +1,9 @@
-import LHYUpper.Fock.Decomp
-import LHYUpper.Statements
+module
+
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Statements
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate RealInnerProductSpace

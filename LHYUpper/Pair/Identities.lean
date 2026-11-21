@@ -1,9 +1,13 @@
-import LHYUpper.Assembly.Section4
-import LHYUpper.Fock.Decomp
-import LHYUpper.Fock.Expect
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.MStar
-import LHYUpper.TrialState.Normalization
+module
+
+public import LHYUpper.Assembly.Section4
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Fock.Expect
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.MStar
+public import LHYUpper.TrialState.Normalization
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

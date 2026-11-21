@@ -1,7 +1,11 @@
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.Chi
-import LHYUpper.TrialState.FRatio
-import LHYUpper.Scattering.Lambda
+module
+
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.Chi
+public import LHYUpper.TrialState.FRatio
+public import LHYUpper.Scattering.Lambda
+
+@[expose] public section
 
 /-!
 # The products (11.5) [elementform2] over a common base

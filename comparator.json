@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "LHYUpper.leeHuangYangUpperBound",
+    "LHYUpper.gaussian_potentialHyp",
+    "LHYUpper.scatteringSolution_existsUnique",
+    "LHYUpper.g0_pos",
+    "LHYUpper.energy_nonneg",
+    "LHYUpper.thermo_proper"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

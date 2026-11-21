@@ -1,7 +1,11 @@
-import LHYUpper.Scattering.Regularity
-import LHYUpper.Scattering.MaxPrinciple
-import LHYUpper.Scattering.Gaussian
-import LHYUpper.Statements
+module
+
+public import LHYUpper.Scattering.Regularity
+public import LHYUpper.Scattering.MaxPrinciple
+public import LHYUpper.Scattering.Gaussian
+public import LHYUpper.Statements
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators RealInnerProductSpace FourierTransform

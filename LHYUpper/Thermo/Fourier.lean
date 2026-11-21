@@ -1,5 +1,9 @@
-import LHYUpper.Position.Basic
-import LHYUpper.Position.SymWave
+module
+
+public import LHYUpper.Position.Basic
+public import LHYUpper.Position.SymWave
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate

@@ -1,8 +1,12 @@
-import LHYUpper.Fock.Decomp
-import LHYUpper.Riemann.Cells
-import LHYUpper.Scattering.Solution
-import LHYUpper.TrialState.Legs
-import LHYUpper.TrialState.Normalization
+module
+
+public import LHYUpper.Fock.Decomp
+public import LHYUpper.Riemann.Cells
+public import LHYUpper.Scattering.Solution
+public import LHYUpper.TrialState.Legs
+public import LHYUpper.TrialState.Normalization
+
+@[expose] public section
 
 open MeasureTheory Filter Topology Real
 open scoped BigOperators ComplexConjugate
