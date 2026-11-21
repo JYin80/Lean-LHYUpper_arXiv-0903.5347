@@ -120,6 +120,14 @@ def gfun (V w : R3 → ℝ) (x : R3) : ℝ := V x * (1 - w x)
 /-- `g₀ = 4πa = ∫ V(1 - w)` (§2). -/
 def g0 (V w : R3 → ℝ) : ℝ := ∫ x, gfun V w x
 
+/-- The approximate condensate density `ρ₀ = ρ - (3π²)⁻¹ g₀^{3/2} ρ^{3/2}`, (3.14) [defrho0].
+Not used in the statements below; kept so that this file repeats `LHYUpper/Model/Basic.lean`
+definition by definition. -/
+def rho0 (g ρ : ℝ) : ℝ := ρ - (3 * π ^ 2)⁻¹ * g ^ (3/2 : ℝ) * ρ ^ (3/2 : ℝ)
+
+/-- `ρ_ε = ρ₀ + ε ρ^{3/2}`, (3.14) [defrho0]. Not used in the statements below. -/
+def rhoEps (g ρ ε : ℝ) : ℝ := rho0 g ρ + ε * ρ ^ (3/2 : ℝ)
+
 /-- The ratio `(e - g₀ρ) / (g₀^{5/2} ρ^{3/2})` of Theorem 2.1 [mainthm], in `[-∞, ∞]`. -/
 def ratio (g : ℝ) (ρ : ℝ) (e : EReal) : EReal :=
   (e - ((g * ρ : ℝ) : EReal)) * (((g ^ (5/2 : ℝ) * ρ ^ (3/2 : ℝ))⁻¹ : ℝ) : EReal)
