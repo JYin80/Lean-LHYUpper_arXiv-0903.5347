@@ -50,28 +50,8 @@ jobs:
       - name: Run the toolchain's lake comparator
         run: ./scripts/verify-comparator.sh
 
-      - name: Debug - print compared definitions from both sides
-        if: failure()
-        run: |
-          mkdir -p "$RUNNER_TEMP/dbg"
-          for side in Challenge Solution; do
-            cat > "$RUNNER_TEMP/dbg/$side.lean" <<EOF
-          import $side
-          import Lean
-          open Lean in
-          run_cmd do
-            for n in [\`LHYUpper.ratio, \`LHYUpper.g0, \`LHYUpper.cLHY, \`LHYUpper.e0P, \`LHYUpper.thermo, \`LHYUpper.gfun] do
-              let c ← getConstInfo n
-              logInfo m!"{n} hints={match c.hints with | .opaque => "opaque" | .abbrev => "abbrev" | .regular h => toString h} lvls={c.levelParams} typeHash={c.type.hash} valueHash={c.value?.map (·.hash)}"
-          set_option pp.all true in
-          #print LHYUpper.ratio
-          EOF
-            sed -i 's/^          //' "$RUNNER_TEMP/dbg/$side.lean"
-            echo "=========== $side"; lake env lean "$RUNNER_TEMP/dbg/$side.lean" || true
-          done
-
   metadata:
-    name: Check formalization.yaml (fails while TEMPLATE values remain)
+    name: Check formalization.yaml
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
