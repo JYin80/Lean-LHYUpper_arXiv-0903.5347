@@ -81,7 +81,7 @@ status:
 automation:
   methods:
     - method: "agent"
-      models: ["claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5-2"]
+      models: ["claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5-1", "claude-fable-5-2"]
       framework: "Claude Code"
       tool_setup: >-
         AI-assisted: a team of Claude Code agents (a dispatcher, workers on ticket worktrees and

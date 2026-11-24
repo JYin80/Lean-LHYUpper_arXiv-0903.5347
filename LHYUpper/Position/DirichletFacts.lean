@@ -69,7 +69,7 @@ theorem isDirichletTrial_nonempty {L : ℝ} (hL : 0 < L) (N : ℕ) :
     refine Finset.prod_pos (fun i _ => ?_)
     exact b.pos_of_mem_ball (by simpa [b] using b.rIn_pos.trans b.rIn_lt_rOut)
   have hI : 0 < ∫ x, P x ^ 2 := by
-    refine Continuous.integral_pos_of_hasCompactSupport_nonneg_ne_zero (f := fun x => P x ^ 2)
+    refine Continuous.integral_pos_of_hasCompactSupport_nonneg_nonzero (f := fun x => P x ^ 2)
       (hPcont.pow 2) hP2c (fun x => sq_nonneg _) (x := fun _ => z) ?_
     exact (pow_pos hP0 2).ne'
   set I : ℝ := ∫ x, P x ^ 2 with hIdef

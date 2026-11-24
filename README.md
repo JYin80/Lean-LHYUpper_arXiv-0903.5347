@@ -69,7 +69,7 @@ the main theorem and the theorems of the chain.
 
 ## Build
 
-The toolchain is `leanprover/lean4:v4.36.0` (file `lean-toolchain`) with Mathlib `v4.36.0`.
+The toolchain is `leanprover/lean4:v4.36.0-rc1` (file `lean-toolchain`) with Mathlib `v4.36.0-rc1`.
 
 ```
 lake exe cache get

@@ -451,14 +451,14 @@ private lemma Id4a2_S_succ (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤ N
           _ = Id4a2_W V w kc N β * (A * 1) := by ring
           _ ≤ _ := by gcongr; exact le_add_self
     obtain ⟨v', β, h⟩ := key
-    exact h.trans ((le_tsum (f := fun β => F α v' β) β).trans
-      (le_tsum (f := fun v' => ∑' β, F α v' β) v'))
-  calc Id4a2_S V w kc N v (j + 1) ≤ ∑' α, ∑' v', ∑' β, F α v' β := tsum_le_tsum hpt
+    exact h.trans ((ENNReal.le_tsum (f := fun β => F α v' β) β).trans
+      (ENNReal.le_tsum (f := fun v' => ∑' β, F α v' β) v'))
+  calc Id4a2_S V w kc N v (j + 1) ≤ ∑' α, ∑' v', ∑' β, F α v' β := ENNReal.tsum_le_tsum hpt
     _ = ∑' v', ∑' β, ∑' α, F α v' β := by
-        rw [tsum_comm]
+        rw [ENNReal.tsum_comm]
         congr 1
         funext v'
-        rw [tsum_comm]
+        rw [ENNReal.tsum_comm]
     _ = ∑' v', ∑' β, (if inPL (rhoN N) (LN N) v' then 1 else 0) *
           ((if Id4a2_Nv kc N v β ∧ β v + β (-v) = j then Id4a2_W V w kc N β else 0) *
             (A * 2)) := by
@@ -466,7 +466,7 @@ private lemma Id4a2_S_succ (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤ N
         funext v'
         congr 1
         funext β
-        simp only [F, ENNReal.tsum_mul_left, tsum_add, tsum_ite_eq, one_add_one_eq_two]
+        simp only [F, ENNReal.tsum_mul_left, ENNReal.tsum_add, tsum_ite_eq, one_add_one_eq_two]
     _ = Id4a2_PL N * Id4a2_S V w kc N v j * (A * 2) := by
         simp only [ENNReal.tsum_mul_left, ENNReal.tsum_mul_right, Id4a2_PL, Id4a2_S]
         ring
@@ -486,7 +486,7 @@ private lemma Id4a2_S_le (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤ N) 
   induction j with
   | zero =>
     rw [pow_zero, ← Id4a2_W_tsum V w kc hN]
-    refine tsum_le_tsum fun α => ?_
+    refine ENNReal.tsum_le_tsum fun α => ?_
     split_ifs
     · exact le_rfl
     · exact zero_le
@@ -609,7 +609,7 @@ private lemma Id4a2_Nv_ennreal (V w : R3 → ℝ) :
         inv_mul_le_iff₀ (by positivity)] at hb
       linarith
     calc Id4a2_PL N ≤ ∑' n, ENNReal.ofReal (f n) := by
-          refine tsum_le_tsum fun n => ?_
+          refine ENNReal.tsum_le_tsum fun n => ?_
           split_ifs with hn
           · have h0 : n ≠ 0 := Regions_PL_ne_zero hρ hn
             have hle : ‖mom L n‖ ≤ R := hn.2
@@ -662,16 +662,16 @@ private lemma Id4a2_Nv_ennreal (V w : R3 → ℝ) :
         (α v : ℝ) * (α (-v) : ℝ) * ‖trialState V w kc N α‖ ^ 2 else 0))
       ≤ ∑' α, ∑' j, (if Id4a2_Nv kc N v α ∧ α v + α (-v) = j then
           ENNReal.ofReal (c j) * Id4a2_W V w kc N α else 0) := by
-        refine tsum_le_tsum fun α => ?_
+        refine ENNReal.tsum_le_tsum fun α => ?_
         split_ifs with hα
-        · refine le_trans ?_ (le_tsum _ (α v + α (-v)))
+        · refine le_trans ?_ (ENNReal.le_tsum (α v + α (-v)))
           rw [ite_eq_left (show Id4a2_Nv kc N v α ∧ α v + α (-v) = α v + α (-v) from ⟨hα, rfl⟩),
             Id4a2_W, ← ENNReal.ofReal_mul (hc0 _)]
           exact ENNReal.ofReal_le_ofReal
             (mul_le_mul_of_nonneg_right (Id4a2_mul_le _ _) (by positivity))
         · simp
     _ = ∑' j, ENNReal.ofReal (c j) * Id4a2_S V w kc N v j := by
-        rw [tsum_comm]
+        rw [ENNReal.tsum_comm]
         congr 1
         funext j
         rw [Id4a2_S, ← ENNReal.tsum_mul_left]
@@ -679,7 +679,7 @@ private lemma Id4a2_Nv_ennreal (V w : R3 → ℝ) :
         funext α
         split_ifs <;> simp
     _ ≤ ∑' j, ENNReal.ofReal (16 * b ^ 2 * (1 / 2) ^ j) := by
-        refine tsum_le_tsum fun j => ?_
+        refine ENNReal.tsum_le_tsum fun j => ?_
         calc ENNReal.ofReal (c j) * Id4a2_S V w kc N v j
             ≤ ENNReal.ofReal (c j) * ENNReal.ofReal b ^ j := by gcongr; exact hS j
           _ = ENNReal.ofReal (c j * b ^ j) := by
@@ -887,17 +887,17 @@ private lemma Id4a2_PH_fixed (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤
     fun x y h => Subtype.ext (a4_injOn u (-u) v (-v) x.2 y.2 h)
   have hsumH : ∑' α, H α ≤ ENNReal.ofReal (D * lu ^ 2) := by
     calc ∑' α, H α = ∑' x : S, Gu (a4 u (-u) v (-v) x.1).2 := (tsum_subtype S _).symm
-      _ ≤ ∑' β, Gu β := tsum_comp_le_tsum_of_injective hinj Gu
+      _ ≤ ∑' β, Gu β := ENNReal.tsum_comp_le_tsum_of_injective hinj Gu
       _ ≤ _ := Hu
   have hmain : ENNReal.ofReal |lu * lv| * ∑' α, ENNReal.ofReal ‖g2 α‖ ≤
       ENNReal.ofReal (D * lu ^ 2 * lv ^ 2) := by
     calc ENNReal.ofReal |lu * lv| * ∑' α, ENNReal.ofReal ‖g2 α‖
         = ∑' α, ENNReal.ofReal |lu * lv| * ENNReal.ofReal ‖g2 α‖ := ENNReal.tsum_mul_left.symm
       _ ≤ ∑' α, (ENNReal.ofReal (lu ^ 2 / 2) * Gv α + ENNReal.ofReal (lv ^ 2 / 2) * H α) :=
-          tsum_le_tsum hpt
+          ENNReal.tsum_le_tsum hpt
       _ = ENNReal.ofReal (lu ^ 2 / 2) * (∑' α, Gv α) +
             ENNReal.ofReal (lv ^ 2 / 2) * ∑' α, H α := by
-          rw [tsum_add, ENNReal.tsum_mul_left, ENNReal.tsum_mul_left]
+          rw [ENNReal.tsum_add, ENNReal.tsum_mul_left, ENNReal.tsum_mul_left]
       _ ≤ ENNReal.ofReal (lu ^ 2 / 2) * ENNReal.ofReal (D * lv ^ 2) +
           ENNReal.ofReal (lv ^ 2 / 2) * ENNReal.ofReal (D * lu ^ 2) :=
           add_le_add (mul_le_mul_of_nonneg_left Hv zero_le)
@@ -909,7 +909,7 @@ private lemma Id4a2_PH_fixed (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤
           ring
   by_cases h0 : lu * lv = 0
   · have hz : ∑' α, ENNReal.ofReal ‖g2 α‖ = 0 := by
-      refine tsum_eq_zero_iff.2 fun α => ?_
+      refine ENNReal.tsum_eq_zero.2 fun α => ?_
       by_contra hne
       have hg : g2 α ≠ 0 := by
         intro h
@@ -931,7 +931,7 @@ private lemma Id4a2_PH_fixed (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤
         exact lt_irrefl _ hXY
       rcases mul_eq_zero.1 h0 with h | h
       · have h1 : Gu (a4 u (-u) v (-v) α).2 ≤ ENNReal.ofReal (D * lu ^ 2) :=
-          (le_tsum Gu _).trans Hu
+          (ENNReal.le_tsum _).trans Hu
         have hNu' : InM (rhoN N) (LN N) kc N (a4 u (-u) v (-v) α).2 ∧
             (∀ γ : Occ, InM (rhoN N) (LN N) kc N γ →
               strictPair u γ ≠ (a4 u (-u) v (-v) α).2) := hNu
@@ -943,7 +943,7 @@ private lemma Id4a2_PH_fixed (V w : R3 → ℝ) (kc : ℝ) {N : ℕ} (hN : 1 ≤
           have := norm_pos_iff.2 hΨT
           positivity
         linarith
-      · have h1 : Gv α ≤ ENNReal.ofReal (D * lv ^ 2) := (le_tsum Gv _).trans Hv
+      · have h1 : Gv α ≤ ENNReal.ofReal (D * lv ^ 2) := (ENNReal.le_tsum _).trans Hv
         have hNv' : InM (rhoN N) (LN N) kc N α ∧
             (∀ γ : Occ, InM (rhoN N) (LN N) kc N γ → strictPair v γ ≠ α) := hNv
         simp only [hGv, ite_eq_left hNv', h, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true,
